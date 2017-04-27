@@ -128,14 +128,14 @@
         const cards = document.querySelectorAll('.mdl-card');
         const search = document.getElementById('prototype-search');
         const spinner = document.querySelector('.mdl-spinner');
-        spinner.style.display = 'none';
-        cards.forEach(card => card.style.display = 'none')
+        spinner.style.display= 'none';
+        cards.forEach(card => card.style.opacity = '0')
         search.addEventListener('submit', (event) => {
           event.preventDefault()
           spinner.style.display = 'flex'
           setTimeout(() => {
           spinner.style.display = 'none'
-            cards.forEach(card => card.style.display='flex');
+            cards.forEach(card => card.style.opacity='1');
           }, 1000)
         });
       </script>
