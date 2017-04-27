@@ -69,9 +69,12 @@
             <div class="mdl-card__actions mdl-card--border" style="display: flex; align-items: center">
               <h2 class="mdl-typography--title" style="margin: 0">Moby Dick</h2>
               <div class="mdl-layout-spacer"></div>
-              <button class="mdl-button mdl-js-button mdl-button--icon">
+              <button class="mdl-button mdl-js-button mdl-button--icon download">
                 <i class="material-icons">get_app</i>
               </button>
+
+              <div class="mdl-spinner mdl-spinner--single-color mdl-js-spinner is-active spinner" style="display: none"></div>
+
               <button id="menu-1" class="mdl-button mdl-js-button mdl-button--icon" style>
                 <i class="material-icons">more_vert</i>
               </button>
@@ -89,9 +92,12 @@
             <div class="mdl-card__actions mdl-card--border" style="display: flex; align-items: center">
               <h2 class="mdl-typography--title" style="margin: 0">Moby Dick</h2>
               <div class="mdl-layout-spacer"></div>
-              <button class="mdl-button mdl-js-button mdl-button--icon">
+              <button class="mdl-button mdl-js-button mdl-button--icon download">
                 <i class="material-icons">get_app</i>
               </button>
+
+              <div class="mdl-spinner mdl-spinner--single-color mdl-js-spinner is-active spinner" style="display: none"></div>
+
               <button id="menu-2" class="mdl-button mdl-js-button mdl-button--icon" style>
                 <i class="material-icons">more_vert</i>
               </button>
@@ -109,9 +115,12 @@
             <div class="mdl-card__actions mdl-card--border" style="display: flex; align-items: center">
               <h2 class="mdl-typography--title" style="margin: 0">Moby Dick</h2>
               <div class="mdl-layout-spacer"></div>
-              <button class="mdl-button mdl-js-button mdl-button--icon">
+              <button class="mdl-button mdl-js-button mdl-button--icon download">
                 <i class="material-icons">get_app</i>
               </button>
+
+              <div class="mdl-spinner mdl-spinner--single-color mdl-js-spinner is-active spinner" style="display: none"></div>
+
               <button id="menu-3" class="mdl-button mdl-js-button mdl-button--icon" style>
                 <i class="material-icons">more_vert</i>
               </button>
@@ -129,9 +138,12 @@
             <div class="mdl-card__actions mdl-card--border" style="display: flex; align-items: center">
               <h2 class="mdl-typography--title" style="margin: 0">Moby Dick</h2>
               <div class="mdl-layout-spacer"></div>
-              <button class="mdl-button mdl-js-button mdl-button--icon">
+              <button class="mdl-button mdl-js-button mdl-button--icon download">
                 <i class="material-icons">get_app</i>
               </button>
+
+              <div class="mdl-spinner mdl-spinner--single-color mdl-js-spinner is-active spinner" style="display: none"></div>
+
               <button id="menu-4" class="mdl-button mdl-js-button mdl-button--icon" style>
                 <i class="material-icons">more_vert</i>
               </button>
@@ -149,9 +161,12 @@
             <div class="mdl-card__actions mdl-card--border" style="display: flex; align-items: center">
               <h2 class="mdl-typography--title" style="margin: 0">Moby Dick</h2>
               <div class="mdl-layout-spacer"></div>
-              <button class="mdl-button mdl-js-button mdl-button--icon">
+              <button class="mdl-button mdl-js-button mdl-button--icon download">
                 <i class="material-icons">get_app</i>
               </button>
+
+              <div class="mdl-spinner mdl-spinner--single-color mdl-js-spinner is-active spinner" style="display: none"></div>
+
               <button id="menu-5" class="mdl-button mdl-js-button mdl-button--icon" style>
                 <i class="material-icons">more_vert</i>
               </button>
@@ -169,9 +184,14 @@
             <div class="mdl-card__actions mdl-card--border" style="display: flex; align-items: center">
               <h2 class="mdl-typography--title" style="margin: 0">Moby Dick</h2>
               <div class="mdl-layout-spacer"></div>
-              <button class="mdl-button mdl-js-button mdl-button--icon">
+              <button class="mdl-button mdl-js-button mdl-button--icon download">
                 <i class="material-icons">get_app</i>
               </button>
+
+
+
+              <div class="mdl-spinner mdl-spinner--single-color mdl-js-spinner is-active spinner" style="display: none"></div>
+
               <button id="menu-6" class="mdl-button mdl-js-button mdl-button--icon" style>
                 <i class="material-icons">more_vert</i>
               </button>
@@ -191,5 +211,27 @@
     </div>
   </main>
 </div>
+<script>
+const downloadButtons = document.querySelectorAll('.download');
+downloadButtons.forEach((e) => {
+  e.addEventListener('click', () => {
+    e.style.display = 'none';
+    var spinner = e.parentNode.querySelector('.spinner');
+    spinner.style.display = 'initial';
+    setTimeout(function(){
+      spinner.style.display = 'none';
+      if(e.querySelector('i').innerText !== 'done'){
+        e.querySelector('i').innerText = 'done';
+        e.style.color = '#ff4081'
+    } else {
+      e.querySelector('i').innerText = 'get_app';
+      e.style.color = 'black'
+    }
+      e.style.display = 'initial';
+    }, 1500)
+
+  })
+})
+</script>
 </body>
 </html>
