@@ -1,61 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Bookish</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
-  <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-</head>
-
-<body>
-  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--no-desktop-drawer-button">
-    <header class="mdl-layout__header">
-      <div class="mdl-layout__header-row">
-        <!-- Title -->
-        <span class="mdl-layout-title">Bookish</span>
-        <!-- Add spacer, to align navigation to the right -->
-        <div class="mdl-layout-spacer"></div>
-        <!-- Navigation. We hide it in small screens. -->
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bookish</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+  </head>
+  <body style="display: flex; flex-direction: row; justify-content: center;">
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      <header class="mdl-layout__header">
+        <div class="mdl-layout__header-row">
+          <!-- Title -->
+          <span class="mdl-layout-title">Bookish</span>
+          <!-- Add spacer, to align navigation to the right -->
+          <div class="mdl-layout-spacer"></div>
+          <!-- Navigation. We hide it in small screens. -->
+          <!-- Expandable Textfield -->
+          <form action="#">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+              <label class="mdl-button mdl-js-button mdl-button--icon" for="sample6">
+                <i class="material-icons">search</i>
+              </label>
+              <div class="mdl-textfield__expandable-holder">
+                <input class="mdl-textfield__input" type="text" id="sample6">
+                <label class="mdl-textfield__label" for="sample-expandable">Expandable Input</label>
+              </div>
+            </div>
+          </form>
+        </div>
+      </header>
+      <div class="mdl-layout__drawer">
         <nav class="mdl-navigation mdl-layout--large-screen-only">
-          <a class="mdl-navigation__link" href="">Link</a>
-          <a class="mdl-navigation__link" href="">Link</a>
-          <a class="mdl-navigation__link" href="">Link</a>
-          <a class="mdl-navigation__link" href="">Link</a>
+          <a class="mdl-navigation__link" href="">Home</a>
+          <a class="mdl-navigation__link" href="">Library</a>
+          <a class="mdl-navigation__link" href="">My Books</a>
+          <a class="mdl-navigation__link" href="">My Account</a>
         </nav>
       </div>
-    </header>
-      <main class="mdl-layout__content mdl-color-text--grey-700">
+      <form id="prototype-search">
+        <input  autofocus style="display:block; margin:auto!important; margin-top:2rem!important; margin-bottom:2rem!important; width: 80%; border: none; margin:1rem; font-size:1.3rem; text-align: center; background: whitesmoke; height: 3rem; outline:none; box-shadow: 0px 1px 1px grey">
+      </form>
+  <main class="mdl-layout__content mdl-color-text--grey-600">
+    <div class="page-content">
+        <div class="mdl-spinner mdl-js-spinner is-active" style="margin:auto!important; margin-top:2rem!important; margin-bottom:2rem!important; text-align: center;"></div>
+      <div class="mdl-grid">
+        <!-- MDL Spinner Component -->
+      <main class="mdl-layout__content mdl-color-text--grey-600">
         <div class="page-content">
-          <div class="mdl-grid">
-            <div class="mdl-cell mdl-cell--12-col">
-              <input autofocus style="display:block; margin:auto!important; margin-top:2rem!important; padding: 1em; width: 80%; border: none; margin:1rem; font-size:1.3rem; background: whitesmoke; height: 5%; box-shadow: 0px 1px 1px grey">
-            </div>
-          </div>
           <div class="mdl-grid">
             <div class="mdl-cell mdl-cell--12-col">
               <h1 class="mdl-typography--display-2">Search Results</h1>
             </div>
           </div>
           <div class="mdl-grid">
-            <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone">
+            <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--2-col-phone">
               <div class="mdl-card mdl-shadow--2dp" style="width: 100%; overflow: visible; z-index: initial">
                 <div class="mdl-card__media" style="background-image: url('https://unsplash.it/300/300'); background-size: cover; flex: 1"></div>
                 <div class="mdl-card__actions mdl-card--border" style="display: flex; align-items: center">
                   <h2 class="mdl-typography--title" style="margin: 0">Moby Dick</h2>
                   <div class="mdl-layout-spacer"></div>
-                  <button class="mdl-button mdl-js-button mdl-button--icon download">
-                    <i class="material-icons">get_app</i>
-                  </button>
-
-                  <div class="mdl-spinner mdl-spinner--single-color mdl-js-spinner is-active spinner" style="display: none"></div>
-
                   <button id="menu-1" class="mdl-button mdl-js-button mdl-button--icon" style>
-                    <i class="material-icons">more_vert</i>
-                  </button>
+                <i class="material-icons">more_vert</i>
+              </button>
                   <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right mdl-js-ripple-effect" for="menu-1">
                     <li class="mdl-menu__item">Save offline</li>
                     <li class="mdl-menu__item">Add to library</li>
@@ -64,21 +73,15 @@
                 </div>
               </div>
             </div>
-            <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone">
+            <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--2-col-phone">
               <div class="mdl-card mdl-shadow--2dp" style="width: 100%; overflow: visible; z-index: initial">
                 <div class="mdl-card__media" style="background-image: url('https://unsplash.it/300/300'); background-size: cover; flex: 1"></div>
                 <div class="mdl-card__actions mdl-card--border" style="display: flex; align-items: center">
                   <h2 class="mdl-typography--title" style="margin: 0">Moby Dick</h2>
                   <div class="mdl-layout-spacer"></div>
-                  <button class="mdl-button mdl-js-button mdl-button--icon download">
-                    <i class="material-icons">get_app</i>
-                  </button>
-
-                  <div class="mdl-spinner mdl-spinner--single-color mdl-js-spinner is-active spinner" style="display: none"></div>
-
                   <button id="menu-2" class="mdl-button mdl-js-button mdl-button--icon" style>
-                    <i class="material-icons">more_vert</i>
-                  </button>
+                <i class="material-icons">more_vert</i>
+              </button>
                   <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right mdl-js-ripple-effect" for="menu-2">
                     <li class="mdl-menu__item">Save offline</li>
                     <li class="mdl-menu__item">Add to library</li>
@@ -87,21 +90,15 @@
                 </div>
               </div>
             </div>
-            <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone">
+            <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--2-col-phone">
               <div class="mdl-card mdl-shadow--2dp" style="width: 100%; overflow: visible; z-index: initial">
                 <div class="mdl-card__media" style="background-image: url('https://unsplash.it/300/300'); background-size: cover; flex: 1"></div>
                 <div class="mdl-card__actions mdl-card--border" style="display: flex; align-items: center">
                   <h2 class="mdl-typography--title" style="margin: 0">Moby Dick</h2>
                   <div class="mdl-layout-spacer"></div>
-                  <button class="mdl-button mdl-js-button mdl-button--icon download">
-                    <i class="material-icons">get_app</i>
-                  </button>
-
-                  <div class="mdl-spinner mdl-spinner--single-color mdl-js-spinner is-active spinner" style="display: none"></div>
-
                   <button id="menu-3" class="mdl-button mdl-js-button mdl-button--icon" style>
-                    <i class="material-icons">more_vert</i>
-                  </button>
+                <i class="material-icons">more_vert</i>
+              </button>
                   <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right mdl-js-ripple-effect" for="menu-3">
                     <li class="mdl-menu__item">Save offline</li>
                     <li class="mdl-menu__item">Add to library</li>
@@ -110,70 +107,16 @@
                 </div>
               </div>
             </div>
-            <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone">
+            <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--2-col-phone">
               <div class="mdl-card mdl-shadow--2dp" style="width: 100%; overflow: visible; z-index: initial">
                 <div class="mdl-card__media" style="background-image: url('https://unsplash.it/300/300'); background-size: cover; flex: 1"></div>
                 <div class="mdl-card__actions mdl-card--border" style="display: flex; align-items: center">
                   <h2 class="mdl-typography--title" style="margin: 0">Moby Dick</h2>
                   <div class="mdl-layout-spacer"></div>
-                  <button class="mdl-button mdl-js-button mdl-button--icon download">
-                    <i class="material-icons">get_app</i>
-                  </button>
-
-                  <div class="mdl-spinner mdl-spinner--single-color mdl-js-spinner is-active spinner" style="display: none"></div>
-
-                  <button id="menu-4" class="mdl-button mdl-js-button mdl-button--icon" style>
-                    <i class="material-icons">more_vert</i>
-                  </button>
-                  <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right mdl-js-ripple-effect" for="menu-4">
-                    <li class="mdl-menu__item">Save offline</li>
-                    <li class="mdl-menu__item">Add to library</li>
-                    <li class="mdl-menu__item">Mark as read</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone">
-              <div class="mdl-card mdl-shadow--2dp" style="width: 100%; overflow: visible; z-index: initial">
-                <div class="mdl-card__media" style="background-image: url('https://unsplash.it/300/300'); background-size: cover; flex: 1"></div>
-                <div class="mdl-card__actions mdl-card--border" style="display: flex; align-items: center">
-                  <h2 class="mdl-typography--title" style="margin: 0">Moby Dick</h2>
-                  <div class="mdl-layout-spacer"></div>
-                  <button class="mdl-button mdl-js-button mdl-button--icon download">
-                    <i class="material-icons">get_app</i>
-                  </button>
-
-                  <div class="mdl-spinner mdl-spinner--single-color mdl-js-spinner is-active spinner" style="display: none"></div>
-
-                  <button id="menu-5" class="mdl-button mdl-js-button mdl-button--icon" style>
-                    <i class="material-icons">more_vert</i>
-                  </button>
-                  <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right mdl-js-ripple-effect" for="menu-5">
-                    <li class="mdl-menu__item">Save offline</li>
-                    <li class="mdl-menu__item">Add to library</li>
-                    <li class="mdl-menu__item">Mark as read</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone">
-              <div class="mdl-card mdl-shadow--2dp" style="width: 100%; overflow: visible; z-index: initial">
-                <div class="mdl-card__media" style="background-image: url('https://unsplash.it/300/300'); background-size: cover; flex: 1"></div>
-                <div class="mdl-card__actions mdl-card--border" style="display: flex; align-items: center">
-                  <h2 class="mdl-typography--title" style="margin: 0">Moby Dick</h2>
-                  <div class="mdl-layout-spacer"></div>
-                  <button class="mdl-button mdl-js-button mdl-button--icon download">
-                    <i class="material-icons">get_app</i>
-                  </button>
-
-
-
-                  <div class="mdl-spinner mdl-spinner--single-color mdl-js-spinner is-active spinner" style="display: none"></div>
-
-                  <button id="menu-6" class="mdl-button mdl-js-button mdl-button--icon" style>
-                    <i class="material-icons">more_vert</i>
-                  </button>
-                  <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right mdl-js-ripple-effect" for="menu-6">
+                  <button id="menu-2" class="mdl-button mdl-js-button mdl-button--icon" style>
+                <i class="material-icons">more_vert</i>
+              </button>
+                  <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right mdl-js-ripple-effect" for="menu-2">
                     <li class="mdl-menu__item">Save offline</li>
                     <li class="mdl-menu__item">Add to library</li>
                     <li class="mdl-menu__item">Mark as read</li>
@@ -182,8 +125,25 @@
               </div>
             </div>
           </div>
-
         </main>
+      <script>
+        const cards = document.querySelectorAll('.mdl-card');
+        const search = document.getElementById('prototype-search');
+        const spinner = document.querySelector('.mdl-spinner');
+        spinner.style.display= 'none';
+        cards.forEach(card => card.style.opacity = '0')
+        search.addEventListener('submit', (event) => {
+          event.preventDefault()
+          spinner.style.display = 'flex'
+          setTimeout(() => {
+          spinner.style.display = 'none'
+            cards.forEach(card => card.style.opacity='1');
+          }, 1000)
+        });
+      </script>
+      </div>
+      </div>
+      </main>
         <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
           <div class="mdl-tabs__tab-bar" style="border: none; background-color: #424242">
               <a href="/search.html" class="mdl-tabs__tab mdl-color--pink-400" style="color: #ffffff">Search</a>
@@ -191,32 +151,5 @@
               <a href="/" class="mdl-tabs__tab" style="color: #ffffff">Browse</a>
           </div>
         </div>
-
-        </div>
-
-        <script>
-        const downloadButtons = document.querySelectorAll('.download');
-        downloadButtons.forEach((e) => {
-          e.addEventListener('click', () => {
-            e.style.display = 'none';
-            var spinner = e.parentNode.querySelector('.spinner');
-            spinner.style.display = 'initial';
-            setTimeout(function(){
-              spinner.style.display = 'none';
-              if(e.querySelector('i').innerText !== 'done'){
-                e.querySelector('i').innerText = 'done';
-                e.style.color = '#ff4081'
-            } else {
-              e.querySelector('i').innerText = 'get_app';
-              e.style.color = 'black'
-            }
-              e.style.display = 'initial';
-            }, 1500)
-
-          })
-        })
-        </script>
-
-
-      </body>
+    </body>
 </html>
