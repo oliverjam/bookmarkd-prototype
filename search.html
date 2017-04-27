@@ -118,6 +118,32 @@
               <a href="/" class="mdl-tabs__tab" style="color: #ffffff">Browse</a>
           </div>
         </div>
-      </div>
-    </body>
+
+        </div>
+
+        <script>
+        const downloadButtons = document.querySelectorAll('.download');
+        downloadButtons.forEach((e) => {
+          e.addEventListener('click', () => {
+            e.style.display = 'none';
+            var spinner = e.parentNode.querySelector('.spinner');
+            spinner.style.display = 'initial';
+            setTimeout(function(){
+              spinner.style.display = 'none';
+              if(e.querySelector('i').innerText !== 'done'){
+                e.querySelector('i').innerText = 'done';
+                e.style.color = '#ff4081'
+            } else {
+              e.querySelector('i').innerText = 'get_app';
+              e.style.color = 'black'
+            }
+              e.style.display = 'initial';
+            }, 1500)
+
+          })
+        })
+        </script>
+
+
+      </body>
 </html>
