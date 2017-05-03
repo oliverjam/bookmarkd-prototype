@@ -241,27 +241,44 @@
       </div>
     </div>
 </div>
+
+<!-- <script type="text/javascript" src="./localforage.js"></script> -->
+
+<script src="./epub.js/build/epub.min.js"></script>
+
+
 <script>
 const downloadButtons = document.querySelectorAll('.download');
-downloadButtons.forEach((e) => {
+
+const downloadMoby = downloadButtons[0];
+
+// console.log(ePub);
+
+// save a book to local storage using local forage
+var Book = ePub('./moby-dick.epub', {
+  storage: true,
+});
+
+console.log(Book);
+
+downloadButtons.forEach(e => {
   e.addEventListener('click', () => {
     e.style.display = 'none';
     var spinner = e.parentNode.querySelector('.spinner');
     spinner.style.display = 'initial';
-    setTimeout(function(){
+    setTimeout(function() {
       spinner.style.display = 'none';
-      if(e.querySelector('i').innerText !== 'done'){
+      if (e.querySelector('i').innerText !== 'done') {
         e.querySelector('i').innerText = 'done';
-        e.style.color = '#ff4081'
-    } else {
-      e.querySelector('i').innerText = 'get_app';
-      e.style.color = 'black'
-    }
+        e.style.color = '#ff4081';
+      } else {
+        e.querySelector('i').innerText = 'get_app';
+        e.style.color = 'black';
+      }
       e.style.display = 'initial';
-    }, 1500)
-
-  })
-})
+    }, 1500);
+  });
+});
 </script>
 </body>
 </html>
